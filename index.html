@@ -1,23 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>VueJS</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
-</head>
-<body>
-    <header><h1>Header</h1></header>
-    <div class="list-blog">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt repudiandae quod, ipsum culpa debitis fugiat distinctio ipsa sapiente ducimus harum obcaecati provident numquam minima voluptas deserunt eveniet rem omnis officiis.</p>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Header</h1>
+    </header>
+    <div class="container">
+      <div class="list-blog">
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi sunt
+          eveniet maxime magni in, nostrum facilis, temporibus, quam facere sint
+          est blanditiis harum dicta. Tempore suscipit ut hic. Deleniti, qui.
+        </p>
+      </div>
+      <div id="app">
+          <div class="cart">Gio Hang</div>
+          <div class="product">
+              <div class="product-image">
+
+              </div>
+              <div class="product-content">
+                  <h3 class="title">
+                      <a v-bind:href="url" v-bind:target="target">{{ title }}</a>
+                  </h3>
+                  <p class="brand">Brand: No brand</p>
+                  <div class="wrapper-price">
+                    <!-- {{ check ? 'true' : 'false'}} -->
+                    <div class="final-price">{{ formatPrice() }}</div>
+                    <div class="origin-price">20 usd</div>
+                    <div class="sale-price">-50 %</div>
+                  </div>
+                  <div class="wrapper-color">
+
+                  </div>
+              </div>
+          </div>
+      </div>
     </div>
-    <div id="app">
-        <p>{{ title }}</p>
-        <h2>{{ say('ZeroKen') }}</h2>
-    </div>
-    <Footer><h1>Footer</h1></Footer>
-<!-- Teamplate Systax -->
-    <script src="main.js"></script>
-</body>
+    <footer>
+      <h1>Footer</h1>
+    </footer>
+  </body>
+  <script src="main.js"></script>
 </html>
