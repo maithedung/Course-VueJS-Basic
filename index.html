@@ -6,6 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>VueJS</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .box {
+        height: 10rem;
+        width: 10rem;
+        position: relative;
+        background-color: aqua;
+      }
+      .box-2 {
+        height: 5rem;
+        width: 5rem;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-color: rebeccapurple;
+      }
+      label {
+        display: block;
+      }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   </head>
 
@@ -22,27 +41,48 @@
         </p>
       </div>
       <div id="app">
-          <div class="cart">Gio Hang</div>
-          <div class="product">
-              <div class="product-image">
-
+        <div class="cart">Gio Hang</div>
+        <div class="product">
+          <div class="product-image"></div>
+          <div class="product-content">
+            <h3 class="title">
+              <a v-bind:href="url" v-bind:target="target">{{ title }}</a>
+            </h3>
+            <p class="brand">Brand: No brand</p>
+            <p>{{ message }}</p>
+            <p>{{ reversedMessage }}</p>
+            <hr>
+            <button v-on:click="a++">A + 1</button>
+            <button v-on:click="b++">B + 1</button>
+            <p>Number + A = {{ addA }}</p>
+            <p>Number + B = {{ addB }}</p>
+            <p>Time: {{ now }}</p>
+            <div class="wrapper-price">
+              <!-- {{ check ? 'true' : 'false'}} -->
+              <form action="" v-on:submit.prevent="handleSubmitForm">
+                <label for="">Type firstName</label>
+                <input type="text" name="firstName" />
+                <label for="">Type email</label>
+                <input type="email" name="email" />
+                <input type="submit" value="Sign in" />
+              </form>
+              <div class="box" v-on:mousemove="handleMouseMove">
+                <p>ClientX: {{ clientX }}</p>
+                <p>ClientY: {{ clientY }}</p>
+                <div
+                  class="box-2"
+                  v-on:mousemove.stop="handleMouseMoveChild"
+                ></div>
               </div>
-              <div class="product-content">
-                  <h3 class="title">
-                      <a v-bind:href="url" v-bind:target="target">{{ title }}</a>
-                  </h3>
-                  <p class="brand">Brand: No brand</p>
-                  <div class="wrapper-price">
-                    <!-- {{ check ? 'true' : 'false'}} -->
-                    <div class="final-price">{{ formatPrice() }}</div>
-                    <div class="origin-price">20 usd</div>
-                    <div class="sale-price">-50 %</div>
-                  </div>
-                  <div class="wrapper-color">
-
-                  </div>
-              </div>
+              <div class="final-price">Count: {{ counter }}</div>
+              <button v-on:click="handleClick($event, 2)">Click me</button>
+              <div class="final-price">{{ formatPrice() }}</div>
+              <div class="origin-price">20 usd</div>
+              <div class="sale-price">-50 %</div>
+            </div>
+            <div class="wrapper-color"></div>
           </div>
+        </div>
       </div>
     </div>
     <footer>
