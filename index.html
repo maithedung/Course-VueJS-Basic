@@ -49,9 +49,29 @@
             <div class="two-way-Data-Binding">
               <h1>FirstName = {{ firstName }}</h1>
               <p>About = {{ about }}</p>
-              <input v-on:keyup="handleKeyUp" type="text" placeholder="Type firstName">
-              <input v-model="firstName" type="text" placeholder="Type firstName">
-              <textarea v-model="about" cols="30" rows="10" placeholder="Type About"></textarea>
+              <input
+                v-on:keyup="handleKeyUp"
+                type="text"
+                placeholder="Type firstName"
+              />
+              <input
+                v-model="firstName"
+                type="text"
+                placeholder="Type firstName"
+              />
+              <textarea
+                v-model="about"
+                cols="30"
+                rows="10"
+                placeholder="Type About"
+              ></textarea>
+            </div>
+            <div class="Class-Binding">
+              <div
+                class="demo"
+                v-bind:class="objClass"
+              ></div>
+              <button v-on:click="changeActive">Change Active</button>
             </div>
             <h3 class="title">
               <a v-bind:href="url" v-bind:target="target">{{ title }}</a>
@@ -59,7 +79,7 @@
             <p class="brand">Brand: No brand</p>
             <p>{{ message }}</p>
             <p>{{ reversedMessage }}</p>
-            <hr>
+            <hr />
             <button v-on:click="a++">A + 1</button>
             <button v-on:click="b++">B + 1</button>
             <p>Number + A = {{ addA }}</p>

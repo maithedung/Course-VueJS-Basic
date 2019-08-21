@@ -13,8 +13,11 @@ const vueInstance = new Vue({
     a: 0,
     b: 0,
     number: 20,
-    firstName: 'Ken',
-    about: ''
+    firstName: "Ken",
+    about: "",
+    textClass: "active",
+    isActive: true,
+    isError: true
   },
   methods: {
     say(text) {
@@ -45,8 +48,12 @@ const vueInstance = new Vue({
       // event.stopPropagation();
     },
     handleKeyUp(event) {
-      console.log(event.target.value)
-      return this.firstName = event.target.value
+      console.log(event.target.value);
+      return (this.firstName = event.target.value);
+    },
+    changeActive() {
+      // const check = this.isActive
+      this.isActive = !this.isActive;
     }
   },
   computed: {
@@ -67,8 +74,11 @@ const vueInstance = new Vue({
       return this.b + this.number;
     },
     now() {
-      return Date.now()
-    }
+      return Date.now();
+    },
+    objClass() {
+      return { active: this.isActive, error: this.isError };
+    },
   }
 });
 // He thong phan ung Reactiriry
