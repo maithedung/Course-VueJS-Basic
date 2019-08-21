@@ -118,6 +118,13 @@
               </div>
             </div>
 
+            <div class="Note-Loop-And-Condition">
+              <!-- <div v-for="user in arrUser" v-if="user.isActive" class="user"> -->
+              <div v-for="user in userActive"  class="user">
+                {{ user.email }}
+              </div>
+            </div>
+
             <div class="Class-Binding">
               <div class="demo" v-bind:class="objClass"></div>
               <button v-on:click="changeActive">Change Active</button>

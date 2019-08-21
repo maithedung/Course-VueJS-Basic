@@ -67,7 +67,14 @@ const vueInstance = new Vue({
       chemistry: 7.8,
       literature: 8.3,
       physic: 9.3
-    }
+    },
+    arrUser: [
+      { email: 'test1@coders.tokyo', isActive: false },
+      { email: 'test2@coders.tokyo', isActive: true },
+      { email: 'test3@coders.tokyo', isActive: true },
+      { email: 'test4@coders.tokyo', isActive: false },
+      { email: 'test5@coders.tokyo', isActive: true }
+    ]
   },
   methods: {
     say(text) {
@@ -170,6 +177,9 @@ const vueInstance = new Vue({
         margin: "2%",
         border: "2px solid #000"
       };
+    },
+    userActive() {
+      return this.arrUser.filter(user => user.isActive)
     }
   }
 });
