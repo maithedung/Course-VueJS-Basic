@@ -2,10 +2,11 @@
 2. VueInstance 
 3. Data & Method 
 4. Data binding
-    - v-bind:href
-    - v-bind:target
-    - v-bind:class
-    - v-bind: style
+    - v-bind:href=
+    - v-bind:target=
+    - v-bind:class=
+    - v-bind:style=
+    - v-bind:key=
 5. JavaScript Expression
 6. Event Handling
     - v-on:click
@@ -17,10 +18,12 @@
     - v-on:keyup
 7. Computed
 8. Two-way Data Binding
-    - v-model
+    - v-model= 
 9. Conditional Rendering (Bieu thuc dieu kien)
     - v-if=
     - v-else=
     - v-elst-if=
     - v-show=
     - key=
+10. List Rendering
+    - v-for=

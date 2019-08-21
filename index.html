@@ -97,6 +97,27 @@
               </div>
             </div>
 
+            <div class="List-Rendering">
+              <ul v-for="(value, key) in scores">
+                <li>{{ key }}: {{ value }}</li>
+              </ul>
+              <div v-bind:style="blogStyle" class="list-blog">
+                <div
+                  v-for="(blog,index) in listBlogs"
+                  v-bind:style="styleBlog"
+                  v-bind:key="index"
+                  class="blog"
+                >
+                  <div v-bind:style="titleStyle" class="title">
+                    {{ blog.title }}
+                  </div>
+                  <div class="description">
+                    {{ blog.body }}
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="Class-Binding">
               <div class="demo" v-bind:class="objClass"></div>
               <button v-on:click="changeActive">Change Active</button>

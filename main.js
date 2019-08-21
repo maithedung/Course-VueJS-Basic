@@ -26,7 +26,48 @@ const vueInstance = new Vue({
     bgImage:
       "https://img.freepik.com/free-vector/blue-light-sparkles-background-with-copyspace_1017-20091.jpg?size=626&ext=jpg",
     tabs: "tabs",
-    tabSelected: "login"
+    tabSelected: "login",
+    listBlogs: [
+      {
+        userId: 1,
+        id: 1,
+        title:
+          "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+        body:
+          "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+      },
+      {
+        userId: 1,
+        id: 2,
+        title: "qui est esse",
+        body:
+          "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+      },
+      {
+        userId: 1,
+        id: 3,
+        title: "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+        body:
+          "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+      }
+    ],
+    blogStyle: {
+      display: "flex",
+    },
+    titleStyle: {
+      textTransform: "uppercase",
+      color: "green",
+      fontWeight: 500,
+      fontSize: "1rem"
+    },
+    scores: {
+      math: 9.0,
+      english: 7.5,
+      science: 8.0,
+      chemistry: 7.8,
+      literature: 8.3,
+      physic: 9.3
+    }
   },
   methods: {
     say(text) {
@@ -121,6 +162,13 @@ const vueInstance = new Vue({
         padding: "15px",
         border: "2px solid blue",
         marginTop: "20px"
+      };
+    },
+    styleBlog() {
+      return {
+        width: "90",
+        margin: "2%",
+        border: "2px solid #000"
       };
     }
   }
