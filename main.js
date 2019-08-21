@@ -12,7 +12,9 @@ const vueInstance = new Vue({
     message: "Hello World",
     a: 0,
     b: 0,
-    number: 20
+    number: 20,
+    firstName: 'Ken',
+    about: ''
   },
   methods: {
     say(text) {
@@ -41,6 +43,10 @@ const vueInstance = new Vue({
     handleMouseMoveChild(event) {
       console.log("HandleMouseMoveChild", event.target);
       // event.stopPropagation();
+    },
+    handleKeyUp(event) {
+      console.log(event.target.value)
+      return this.firstName = event.target.value
     }
   },
   computed: {
@@ -53,11 +59,11 @@ const vueInstance = new Vue({
         .join("");
     },
     addA() {
-      console.log("Add A run");
+      // console.log("Add A run");
       return this.a + this.number;
     },
     addB() {
-      console.log("Add B run");
+      // console.log("Add B run");
       return this.b + this.number;
     },
     now() {
@@ -72,6 +78,6 @@ setTimeout(() => {
   vueInstance.title = "CodersX";
 }, 3000);
 
-console.log(vueInstance.reversedMessage);
+// console.log(vueInstance.reversedMessage);
 // vueInstance.message = "Say Goodbye";
-console.log(vueInstance.reversedMessage);
+// console.log(vueInstance.reversedMessage);

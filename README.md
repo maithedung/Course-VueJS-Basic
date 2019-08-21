@@ -12,3 +12,4 @@
     - .stop || event.stopPropagation() (Dung su lan tu con ra cha)
     - keyup
 7. Computed
+8. Two-way Data Binding

@@ -45,6 +45,14 @@
         <div class="product">
           <div class="product-image"></div>
           <div class="product-content">
+            <!-- v-model -->
+            <div class="two-way-Data-Binding">
+              <h1>FirstName = {{ firstName }}</h1>
+              <p>About = {{ about }}</p>
+              <input v-on:keyup="handleKeyUp" type="text" placeholder="Type firstName">
+              <input v-model="firstName" type="text" placeholder="Type firstName">
+              <textarea v-model="about" cols="30" rows="10" placeholder="Type About"></textarea>
+            </div>
             <h3 class="title">
               <a v-bind:href="url" v-bind:target="target">{{ title }}</a>
             </h3>
