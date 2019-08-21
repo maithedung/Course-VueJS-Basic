@@ -4,6 +4,8 @@
 4. Data binding
     - v-bind:href
     - v-bind:target
+    - v-bind:class
+    - v-bind: style
 5. JavaScript Expression
 6. Event Handling
     - v-on:click

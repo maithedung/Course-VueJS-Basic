@@ -17,7 +17,13 @@ const vueInstance = new Vue({
     about: "",
     textClass: "active",
     isActive: true,
-    isError: true
+    isError: true,
+    activeColor: 'white',
+    fontSize: '1rem',
+    marginTop: '1rem',
+    width: "16rem",
+    heigh: "auto",
+    bgImage: 'https://img.freepik.com/free-vector/blue-light-sparkles-background-with-copyspace_1017-20091.jpg?size=626&ext=jpg'
   },
   methods: {
     say(text) {
@@ -79,6 +85,16 @@ const vueInstance = new Vue({
     objClass() {
       return { active: this.isActive, error: this.isError };
     },
+    background() {
+      return `url(${this.bgImage})`
+    },
+    objStyle() {
+      return {
+        color: this.activeColor,
+        fontSize: this.fontSize,
+        marginTop: this. marginTop
+      }
+    }
   }
 });
 // He thong phan ung Reactiriry

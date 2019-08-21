@@ -67,11 +67,13 @@
               ></textarea>
             </div>
             <div class="Class-Binding">
-              <div
-                class="demo"
-                v-bind:class="objClass"
-              ></div>
+              <div class="demo" v-bind:class="objClass"></div>
               <button v-on:click="changeActive">Change Active</button>
+            </div>
+            <div v-bind:style="{ backgroundImage: background, width: width, height: width}" class="Style-Binding">
+              <div v-bind:style="objStyle">
+                Test Style Binding
+              </div>
             </div>
             <h3 class="title">
               <a v-bind:href="url" v-bind:target="target">{{ title }}</a>
