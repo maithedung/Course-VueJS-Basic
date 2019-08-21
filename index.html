@@ -24,6 +24,12 @@
       label {
         display: block;
       }
+      .tabs li {
+        cursor: pointer;
+        display: inline-block;
+        padding: 10px 15px;
+        border: 1px solid #000000;
+      }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   </head>
@@ -66,27 +72,60 @@
                 placeholder="Type About"
               ></textarea>
             </div>
+
+            <div class="Conditional-Rendering">
+              <ul v-bind:class="tabs" v-bind:style="styleTabs">
+                <li v-on:click="changeTab('login')">Log in</li>
+                <li v-on:click="changeTab('register')">Sign up</li>
+              </ul>
+              <!-- <div class="login" v-if="tabSelected === 'login'"> -->
+              <div class="login" v-show="tabSelected === 'login'">
+                <h2>Form Log In</h2>
+                <form v-bind:style="styleFormLogin" action="">
+                  <input type="text" placeholder="Type Username" />
+                  <input type="password" placeholder="Type Password" />
+                </form>
+              </div>
+              <!-- <div class="registered" v-else-if="tabSelected === 'register'"> -->
+              <div class="registered" v-show="tabSelected === 'register'">
+                <h2>Form Sign Up</h2>
+                <form v-bind:style="styleFormRegister" action="">
+                  <input type="text" placeholder="Type Username" />
+                  <input type="password" placeholder="Type Password" />
+                  <input type="password" placeholder="Retype Password" />
+                </form>
+              </div>
+            </div>
+
             <div class="Class-Binding">
               <div class="demo" v-bind:class="objClass"></div>
               <button v-on:click="changeActive">Change Active</button>
             </div>
-            <div v-bind:style="{ backgroundImage: background, width: width, height: width}" class="Style-Binding">
+
+            <div
+              v-bind:style="{ backgroundImage: background, width: width, height: width}"
+              class="Style-Binding"
+            >
               <div v-bind:style="objStyle">
                 Test Style Binding
               </div>
             </div>
+
             <h3 class="title">
               <a v-bind:href="url" v-bind:target="target">{{ title }}</a>
             </h3>
+
             <p class="brand">Brand: No brand</p>
             <p>{{ message }}</p>
             <p>{{ reversedMessage }}</p>
             <hr />
+
             <button v-on:click="a++">A + 1</button>
             <button v-on:click="b++">B + 1</button>
             <p>Number + A = {{ addA }}</p>
             <p>Number + B = {{ addB }}</p>
             <p>Time: {{ now }}</p>
+
             <div class="wrapper-price">
               <!-- {{ check ? 'true' : 'false'}} -->
               <form action="" v-on:submit.prevent="handleSubmitForm">
@@ -96,6 +135,7 @@
                 <input type="email" name="email" />
                 <input type="submit" value="Sign in" />
               </form>
+
               <div class="box" v-on:mousemove="handleMouseMove">
                 <p>ClientX: {{ clientX }}</p>
                 <p>ClientY: {{ clientY }}</p>
@@ -104,8 +144,10 @@
                   v-on:mousemove.stop="handleMouseMoveChild"
                 ></div>
               </div>
+
               <div class="final-price">Count: {{ counter }}</div>
               <button v-on:click="handleClick($event, 2)">Click me</button>
+
               <div class="final-price">{{ formatPrice() }}</div>
               <div class="origin-price">20 usd</div>
               <div class="sale-price">-50 %</div>

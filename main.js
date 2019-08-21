@@ -18,12 +18,15 @@ const vueInstance = new Vue({
     textClass: "active",
     isActive: true,
     isError: true,
-    activeColor: 'white',
-    fontSize: '1rem',
-    marginTop: '1rem',
+    activeColor: "white",
+    fontSize: "1rem",
+    marginTop: "1rem",
     width: "16rem",
     heigh: "auto",
-    bgImage: 'https://img.freepik.com/free-vector/blue-light-sparkles-background-with-copyspace_1017-20091.jpg?size=626&ext=jpg'
+    bgImage:
+      "https://img.freepik.com/free-vector/blue-light-sparkles-background-with-copyspace_1017-20091.jpg?size=626&ext=jpg",
+    tabs: "tabs",
+    tabSelected: "login"
   },
   methods: {
     say(text) {
@@ -60,6 +63,9 @@ const vueInstance = new Vue({
     changeActive() {
       // const check = this.isActive
       this.isActive = !this.isActive;
+    },
+    changeTab(tab) {
+      this.tabSelected = tab;
     }
   },
   computed: {
@@ -86,14 +92,36 @@ const vueInstance = new Vue({
       return { active: this.isActive, error: this.isError };
     },
     background() {
-      return `url(${this.bgImage})`
+      return `url(${this.bgImage})`;
     },
     objStyle() {
       return {
         color: this.activeColor,
         fontSize: this.fontSize,
-        marginTop: this. marginTop
-      }
+        marginTop: this.marginTop
+      };
+    },
+    styleTabs() {
+      return {
+        margin: 0,
+        padding: 0
+      };
+    },
+    styleFormLogin() {
+      return {
+        display: "flex",
+        padding: "15px",
+        border: "2px solid blue",
+        marginTop: "20px"
+      };
+    },
+    styleFormRegister() {
+      return {
+        display: "flex",
+        padding: "15px",
+        border: "2px solid blue",
+        marginTop: "20px"
+      };
     }
   }
 });
