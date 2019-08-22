@@ -27,3 +27,8 @@
     - key=
 10. List Rendering
     - v-for=
+11. Note about Array and Object
+    - vueInstance.$set(target, key, value) 
+    Ex: 
+        - with Array: vueInstance.$set(vueInstance.arrNumber, 0, 2019)
+        - with Object: vueInstance.$set(vueInstance.objScore, "englis", 9)

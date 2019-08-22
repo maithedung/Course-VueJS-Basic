@@ -103,7 +103,7 @@
               </ul>
               <div v-bind:style="blogStyle" class="list-blog">
                 <div
-                  v-for="(blog,index) in listBlogs"
+                  v-for="(blog, index) in listBlogs"
                   v-bind:style="styleBlog"
                   v-bind:key="index"
                   class="blog"
@@ -120,9 +120,19 @@
 
             <div class="Note-Loop-And-Condition">
               <!-- <div v-for="user in arrUser" v-if="user.isActive" class="user"> -->
-              <div v-for="user in userActive"  class="user">
+              <div v-for="user in userActive" class="user">
                 {{ user.email }}
               </div>
+            </div>
+
+            <div class="Note-Array-And-Object">
+              <ul>
+                <li v-for="(score, key) in objScore">{{ key }}: {{ score }}</li>
+              </ul>
+              <hr />
+              <ul>
+                <li v-for="number in arrNumber">{{ number }}</li>
+              </ul>
             </div>
 
             <div class="Class-Binding">

@@ -52,7 +52,7 @@ const vueInstance = new Vue({
       }
     ],
     blogStyle: {
-      display: "flex",
+      display: "flex"
     },
     titleStyle: {
       textTransform: "uppercase",
@@ -69,12 +69,16 @@ const vueInstance = new Vue({
       physic: 9.3
     },
     arrUser: [
-      { email: 'test1@coders.tokyo', isActive: false },
-      { email: 'test2@coders.tokyo', isActive: true },
-      { email: 'test3@coders.tokyo', isActive: true },
-      { email: 'test4@coders.tokyo', isActive: false },
-      { email: 'test5@coders.tokyo', isActive: true }
-    ]
+      { email: "test1@coders.tokyo", isActive: false },
+      { email: "test2@coders.tokyo", isActive: true },
+      { email: "test3@coders.tokyo", isActive: true },
+      { email: "test4@coders.tokyo", isActive: false },
+      { email: "test5@coders.tokyo", isActive: true }
+    ],
+    arrNumber: [1, 2, 3, 4, 5, 6],
+    objScore: {
+      math: 8.0
+    }
   },
   methods: {
     say(text) {
@@ -179,7 +183,7 @@ const vueInstance = new Vue({
       };
     },
     userActive() {
-      return this.arrUser.filter(user => user.isActive)
+      return this.arrUser.filter(user => user.isActive);
     }
   }
 });
