@@ -34,3 +34,9 @@
         - with Object: vueInstance.$set(vueInstance.objScore, "englis", 9)
 12. Raw HTML
     - v-html=
+13. Structure in the Project
+    - Environment
+        + Development
+            - Babel --> A JavaScript Compiler
+            - Webpack --> Tool giup dong goi code, dong goi ma nguon
+        + Production
