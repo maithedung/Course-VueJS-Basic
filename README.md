@@ -32,3 +32,5 @@
     Ex: 
         - with Array: vueInstance.$set(vueInstance.arrNumber, 0, 2019)
         - with Object: vueInstance.$set(vueInstance.objScore, "englis", 9)
+12. Raw HTML
+    - v-html=

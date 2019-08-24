@@ -47,151 +47,202 @@
         </p>
       </div>
       <div id="app">
-        <div class="cart">Gio Hang</div>
-        <div class="product">
-          <div class="product-image"></div>
-          <div class="product-content">
-            <!-- v-model -->
-            <div class="two-way-Data-Binding">
-              <h1>FirstName = {{ firstName }}</h1>
-              <p>About = {{ about }}</p>
-              <input
-                v-on:keyup="handleKeyUp"
-                type="text"
-                placeholder="Type firstName"
-              />
-              <input
-                v-model="firstName"
-                type="text"
-                placeholder="Type firstName"
-              />
-              <textarea
-                v-model="about"
-                cols="30"
-                rows="10"
-                placeholder="Type About"
-              ></textarea>
-            </div>
+        <div class="Playground">
+          <div class="Two-Way-Data-Binding">
+            <h1>FirstName = {{ firstName }}</h1>
+            <p>About = {{ about }}</p>
+            <input
+              v-on:keyup="handleKeyUp"
+              type="text"
+              placeholder="Type firstName"
+            />
+            <input
+              v-model="firstName"
+              type="text"
+              placeholder="Type firstName"
+            />
+            <textarea
+              v-model="about"
+              cols="30"
+              rows="10"
+              placeholder="Type About"
+            ></textarea>
+          </div>
 
-            <div class="Conditional-Rendering">
-              <ul v-bind:class="tabs" v-bind:style="styleTabs">
-                <li v-on:click="changeTab('login')">Log in</li>
-                <li v-on:click="changeTab('register')">Sign up</li>
-              </ul>
-              <!-- <div class="login" v-if="tabSelected === 'login'"> -->
-              <div class="login" v-show="tabSelected === 'login'">
-                <h2>Form Log In</h2>
-                <form v-bind:style="styleFormLogin" action="">
-                  <input type="text" placeholder="Type Username" />
-                  <input type="password" placeholder="Type Password" />
-                </form>
-              </div>
-              <!-- <div class="registered" v-else-if="tabSelected === 'register'"> -->
-              <div class="registered" v-show="tabSelected === 'register'">
-                <h2>Form Sign Up</h2>
-                <form v-bind:style="styleFormRegister" action="">
-                  <input type="text" placeholder="Type Username" />
-                  <input type="password" placeholder="Type Password" />
-                  <input type="password" placeholder="Retype Password" />
-                </form>
-              </div>
+          <div class="Conditional-Rendering">
+            <ul v-bind:class="tabs" v-bind:style="styleTabs">
+              <li v-on:click="changeTab('login')">Log in</li>
+              <li v-on:click="changeTab('register')">Sign up</li>
+            </ul>
+            <!-- <div class="login" v-if="tabSelected === 'login'"> -->
+            <div class="login" v-show="tabSelected === 'login'">
+              <h2>Form Log In</h2>
+              <form v-bind:style="styleFormLogin" action="">
+                <input type="text" placeholder="Type Username" />
+                <input type="password" placeholder="Type Password" />
+              </form>
             </div>
+            <!-- <div class="registered" v-else-if="tabSelected === 'register'"> -->
+            <div class="registered" v-show="tabSelected === 'register'">
+              <h2>Form Sign Up</h2>
+              <form v-bind:style="styleFormRegister" action="">
+                <input type="text" placeholder="Type Username" />
+                <input type="password" placeholder="Type Password" />
+                <input type="password" placeholder="Retype Password" />
+              </form>
+            </div>
+          </div>
 
-            <div class="List-Rendering">
-              <ul v-for="(value, key) in scores">
-                <li>{{ key }}: {{ value }}</li>
-              </ul>
-              <div v-bind:style="blogStyle" class="list-blog">
-                <div
-                  v-for="(blog, index) in listBlogs"
-                  v-bind:style="styleBlog"
-                  v-bind:key="index"
-                  class="blog"
-                >
-                  <div v-bind:style="titleStyle" class="title">
-                    {{ blog.title }}
-                  </div>
-                  <div class="description">
-                    {{ blog.body }}
-                  </div>
+          <div class="List-Rendering">
+            <ul v-for="(value, key) in scores">
+              <li>{{ key }}: {{ value }}</li>
+            </ul>
+            <div v-bind:style="blogStyle" class="list-blog">
+              <div
+                v-for="(blog, index) in listBlogs"
+                v-bind:style="styleBlog"
+                v-bind:key="index"
+                class="blog"
+              >
+                <div v-bind:style="titleStyle" class="title">
+                  {{ blog.title }}
+                </div>
+                <div class="description">
+                  {{ blog.body }}
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="Note-Loop-And-Condition">
-              <!-- <div v-for="user in arrUser" v-if="user.isActive" class="user"> -->
-              <div v-for="user in userActive" class="user">
-                {{ user.email }}
-              </div>
+          <div class="Note-Array-And-Object">
+            <ul>
+              <li v-for="(score, key) in objScore">{{ key }}: {{ score }}</li>
+            </ul>
+            <hr />
+            <ul>
+              <li v-for="number in arrNumber">{{ number }}</li>
+            </ul>
+          </div>
+
+          <div class="Note-Loop-And-Condition">
+            <!-- <div v-for="user in arrUser" v-if="user.isActive" class="user"> -->
+            <div v-for="user in userActive" class="user">
+              {{ user.email }}
             </div>
+          </div>
 
-            <div class="Note-Array-And-Object">
-              <ul>
-                <li v-for="(score, key) in objScore">{{ key }}: {{ score }}</li>
-              </ul>
-              <hr />
-              <ul>
-                <li v-for="number in arrNumber">{{ number }}</li>
-              </ul>
-            </div>
+          <div class="Class-Binding">
+            <div class="demo" v-bind:class="objClass"></div>
+            <button v-on:click="changeActive">Change Active</button>
+          </div>
 
-            <div class="Class-Binding">
-              <div class="demo" v-bind:class="objClass"></div>
-              <button v-on:click="changeActive">Change Active</button>
-            </div>
-
+          <div class="Style-Binding">
             <div
               v-bind:style="{ backgroundImage: background, width: width, height: width}"
-              class="Style-Binding"
             >
               <div v-bind:style="objStyle">
                 Test Style Binding
               </div>
             </div>
+          </div>
 
-            <h3 class="title">
-              <a v-bind:href="url" v-bind:target="target">{{ title }}</a>
-            </h3>
-
-            <p class="brand">Brand: No brand</p>
-            <p>{{ message }}</p>
-            <p>{{ reversedMessage }}</p>
-            <hr />
-
+          <div class="Data-And-Method">
             <button v-on:click="a++">A + 1</button>
             <button v-on:click="b++">B + 1</button>
             <p>Number + A = {{ addA }}</p>
             <p>Number + B = {{ addB }}</p>
             <p>Time: {{ now }}</p>
+            <p>{{ message }}</p>
+            <p>{{ reversedMessage }}</p>
+            <hr />
+          </div>
 
-            <div class="wrapper-price">
-              <!-- {{ check ? 'true' : 'false'}} -->
-              <form action="" v-on:submit.prevent="handleSubmitForm">
-                <label for="">Type firstName</label>
-                <input type="text" name="firstName" />
-                <label for="">Type email</label>
-                <input type="email" name="email" />
-                <input type="submit" value="Sign in" />
-              </form>
-
-              <div class="box" v-on:mousemove="handleMouseMove">
-                <p>ClientX: {{ clientX }}</p>
-                <p>ClientY: {{ clientY }}</p>
-                <div
-                  class="box-2"
-                  v-on:mousemove.stop="handleMouseMoveChild"
-                ></div>
-              </div>
-
+          <div class="Event-Handling">
+            <div class="box" v-on:mousemove="handleMouseMove">
+              <p>ClientX: {{ clientX }}</p>
+              <p>ClientY: {{ clientY }}</p>
+              <div
+                class="box-2"
+                v-on:mousemove.stop="handleMouseMoveChild"
+              ></div>
               <div class="final-price">Count: {{ counter }}</div>
               <button v-on:click="handleClick($event, 2)">Click me</button>
-
-              <div class="final-price">{{ formatPrice() }}</div>
-              <div class="origin-price">20 usd</div>
-              <div class="sale-price">-50 %</div>
             </div>
-            <div class="wrapper-color"></div>
+
+            <!-- {{ check ? 'true' : 'false'}} -->
+            <form action="" v-on:submit.prevent="handleSubmitForm">
+              <label for="">Type firstName</label>
+              <input type="text" name="firstName" />
+              <label for="">Type email</label>
+              <input type="email" name="email" />
+              <input type="submit" value="Sign in" />
+            </form>
           </div>
+        </div>
+
+        <div class="cart">Gio Hang ({{ count }})</div>
+        <div class="product">
+          <div class="product-image">
+            <div class="image">
+              <img
+                v-bind:src="getProduct.image"
+                v-bind:alt="getProduct.textColor"
+              />
+            </div>
+          </div>
+          <div class="product-content">
+            <h3 class="title">
+              <a v-bind:href="url" v-bind:target="target">{{ title }}</a>
+            </h3>
+            <p class="brand">Brand: No brand</p>
+            <div class="quantity" v-if="getProduct.quantity > 0" >Quantity: {{ getProduct.quantity }}</div>
+            <div class="quantity" v-if="getProduct.quantity <= 0" >The product is out of stock</div>
+            <div class="wrapper-price">
+              <div class="final-price">{{ formatPrice(price) }}</div>
+              <div class="origin-price">{{ formatPrice(oldPrice) }}</div>
+              <div class="sale-price">-{{ salePrice * 100 }} %</div>
+            </div>
+            <div class="wrapper-color">
+              <div class="text">Color</div>
+              <div class="list-color">
+                <p class="color-text">
+                  {{ getProduct.textColor }}
+                </p>
+                <ul>
+                  <li
+                    v-for="(item, index) in listProductDetail"
+                    v-bind:class="classActive(index)"
+                    v-bind:key="index"
+                    v-on:click="handleClickColor($event, index)"
+                  >
+                    <img v-bind:src="item.image" v-bind:alt="item.textColor" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <button v-on:click="addToCart" class="add-to-cart">Add to cart</button>
+          </div>
+        </div>
+
+        <div class="description">
+          <ul class="extra-info">
+            <li v-for="item in listDesc">{{ item }}</li>
+            <!-- <li>Thoát mồ hôi tốt</li>
+            <li>
+              Áo thun cổ tròn thể thao Hiye chuyên được may từ chất liệu nilon
+              thoáng mát
+            </li>
+            <li>
+              Kết hợp thêm sợi thun tạo độ co giãn giúp người tiêu dùng thoải
+              mái khi mặc
+            </li>
+            <li>Chất liệu: polyester và thun</li> -->
+          </ul>
+          <h2>Chất liệu bền chặt&nbsp;</h2>
+          <!-- v-html -->
+          <div v-html="description"></div>
+          <!-- {{ testDescription }} -->
+          <!-- <div v-html="description"></div> -->
         </div>
       </div>
     </div>
@@ -201,3 +252,12 @@
   </body>
   <script src="main.js"></script>
 </html>
+
+<!-- 
+  Function:
+  1. Choose color 
+  2. Change color name
+  3. Calculate cost after sale
+  4. Add to cart
+  5. Check quantity product. If quantity < 0 -> render Out of stock
+ -->
