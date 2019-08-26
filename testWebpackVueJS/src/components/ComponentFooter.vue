@@ -1,16 +1,20 @@
 <template>
   <footer>
-    <h1>{{ textFooter }}</h1>
+    <h1>{{ title }}</h1>
   </footer>
 </template>
 
 <script>
 export default {
   name: "component-footer",
+  props: {
+    title: {
+      type: String,
+      default: "CodersX default"
+    }
+  },
   data() {
-    return {
-      textFooter: "Hello Footer"
-    };
+    return {};
   }
 };
 </script>

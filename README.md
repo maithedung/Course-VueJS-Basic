@@ -40,3 +40,15 @@
             - Babel --> A JavaScript Compiler
             - Webpack --> Tool giup dong goi code, dong goi ma nguon
         + Production
+14. Props 
+    - Nhung data truyen tu Component cha vao Component con
+    -> Cu phap giong thuoc tinh -> Rang buoc attribute -> Use v-bind: 
+    - Props Down -> Truyen du lieu tu cha vao con --> Thang con chi used, khong duoc change truc tiep
+15. Event
+    - Event Up -> Truyen thong diep (Thong diep event) thong bao cho Component cha know it want change data -> Task of Component cha la nhan duoc thong diep va tien hanh change data -> Custom Event in VueJS
+    - Custom Events
+16. Reference
+    - Tham chieu toi HTML elements
+17. Slot
+    - Cau truc HTML elements in Component tag
+
